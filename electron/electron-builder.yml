@@ -1,0 +1,35 @@
+appId: dev.mistudio.mi-ripple-studio
+productName: Mi-Ripple Studio
+copyright: "Unofficial community shell for the MIT-licensed Mi-Ripple tool. MIYANG is a trademark of MIYANG Technology (Shanghai) Co., Ltd."
+
+directories:
+  output: dist
+  buildResources: ../assets
+
+# Only the shell JS ships in asar; the heavy backend and examples are
+# extraResources (kept out of asar so the frozen server can execute in place).
+files:
+  - main.js
+  - preload.js
+  - package.json
+
+extraResources:
+  # Frozen Python/Gradio backend (onedir PyInstaller output) -> resources/server/MiRippleServer/
+  - from: ../python-dist/MiRippleServer
+    to: server/MiRippleServer
+  # Bundled example images (synthetic + curated reference assets) -> resources/examples/
+  - from: ../examples
+    to: examples
+
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  icon: ../assets/icon.png
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: always
+  artifactName: ${productName}-${version}-win-${arch}.${ext}

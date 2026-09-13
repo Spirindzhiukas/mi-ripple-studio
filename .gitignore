@@ -1,0 +1,23 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+
+# Node / Electron
+node_modules/
+electron/dist/
+
+# Build artifacts
+python-dist/
+build/server/
+.tmp-build/
+dist/
+
+# Regenerated at runtime
+examples/index.json
+examples/generated_*.png
+
+# OS cruft
+.DS_Store
+Thumbs.db

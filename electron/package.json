@@ -1,0 +1,23 @@
+{
+  "name": "mi-ripple-studio",
+  "productName": "Mi-Ripple Studio",
+  "version": "1.0.0",
+  "description": "Self-contained, offline-only Gradio desktop interface for Mi-Ripple (diagnosis-guided ripple-artifact restoration)",
+  "main": "main.js",
+  "author": {
+    "name": "Mi-Ripple Studio contributors",
+    "email": "mi-ripple-studio@users.noreply.local"
+  },
+  "homepage": "https://github.com/miyang-ai/Mi-Ripple",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win",
+    "build:win": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^44.0.0",
+    "electron-builder": "^26.0.0"
+  }
+}
